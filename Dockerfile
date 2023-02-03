@@ -1,6 +1,6 @@
 FROM harness/delegate:23.01.78102.minimal
 
-USER root
+#USER root
 
 #RUN microdnf update \  
 #  && microdnf install --nodocs \  
