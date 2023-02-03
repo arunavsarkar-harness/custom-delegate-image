@@ -1,8 +1,8 @@
 FROM harness/delegate:23.01.78102.minimal
 
-USER 0
+#USER 0
 
-RUN microdnf update 
+#RUN microdnf update 
  # && microdnf install --nodocs
   
 #RUN microdnf update \  
@@ -11,8 +11,9 @@ RUN microdnf update
 #    Yum-utils
     
 RUN mkdir /opt/harness-delegate/tools && cd /opt/harness-delegate/tools \  
-  && curl -k -LO "<https://dl.k8s.io/release/$(curl> -L -s<https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl>" && chmod +x kubectl
+  && curl -LO https://dl.k8s.io/release/v1.26.0/bin/linux/amd64/kubectl \
+  && chmod +x kubectl
 
-USER 1001
+#USER 1001
 
 ENV PATH=/opt/harness-delegate/tools/:$PATH
