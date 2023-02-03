@@ -2,8 +2,8 @@ FROM harness/delegate:23.01.78102.minimal
 
 USER 0
 
-RUN microdnf update \  
-  && microdnf install --nodocs
+RUN microdnf update 
+ # && microdnf install --nodocs
   
 #RUN microdnf update \  
 #  && microdnf install --nodocs \  
